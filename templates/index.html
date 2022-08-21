@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bollywood Movie Recommendation System</title>
+    <link rel="stylesheet" href="./../static/index.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Bollywood Movie Recommendation System</h1>
+        <h5 style="text-align: center;">If you want to built contact me : <a href="https://sohipm.com/#contact" target="_blank" >Sohipm</a></h5>
+        <div class="form-pat">
+
+            <form action="" method="post" id="search_form">
+                <input list="browserdata" id="browser" required name="movie" placeholder="Select A Movie" size="auto"
+                    autocomplete="off" />
+
+                <datalist name="movie" id="browserdata">
+                    {% for itm in recomend %}
+                    <option value='{{itm}}'>{{itm}}</option>
+                    {% endfor %}
+                </datalist>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="images">
+            {% for i_v, i_l, w_l, t, g, s, a in zip_value %}
+            <!-- <h2>{{i_l}}</h2>     -->
+            <div class="card">
+                <a href="{{ url_for('See', indx=[i_v]) }}" title='{{t}}'>
+                    <img src={{i_l}} alt={{t}} width="220" />
+                </a>
+                <div class="buttom">
+                    <h4>{{t}}</h4>
+                    <h5>{{g}}</h5>
+                    <a href="{{w_l}}" target="_blank">Movie Details</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+
+</html>
