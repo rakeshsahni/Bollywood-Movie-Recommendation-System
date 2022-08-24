@@ -14,6 +14,7 @@ process to build this app
 1.) First stage is undoubtly data acquisition -> https://www.kaggle.com/datasets/pncnmnp/the-indian-movie-database
 
 Before jump any calculation we need to clean data first of all using spacy ( NLP )
+
 2.) In NLP data cleaning and data munging is one of the crucial part we have to remove punctuation, stop words, html tag. spell correct etc. To do so i have used spacy nlp library
 
 3.) I also consider imdb rating and imdb votes which is present in numeric form i converted to categorical form like low_raing, medium_rating, high_rating, very_high_rating
